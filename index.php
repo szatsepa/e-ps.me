@@ -1,7 +1,10 @@
  <?php
- // created by arcady.1254@gmail.com 2/2/2012
+ // created by arcady.1254@gmail.com 2/3/2012
+ 
  if(!isset($attributes) || !is_array($attributes)) {
+     
         $attributes = array();
+        
         $attributes = array_merge($_GET,$_POST,$_COOKIE); 
 }
 if(!isset($_SESSION)){
@@ -24,9 +27,26 @@ if(isset($attributes[di]) && !isset ($_SESSION[auth])){
 //print_r($attributes);  
 
   
-include 'main/connect.php';
+include 'action/connect.php';
+
 include 'action/quotesmart.php';
 
+if($attributes[act] != 'registration'){
 
-include 'main/disconnect.php';
+if(isset ($_SESSION[id])) include 'query/checkauth.php';
+
+}
+
+switch ($attributes[act]) {
+    
+        case 'auth':
+//        include 'main/header.php';
+        include 'query/authentication.php';
+       break;
+
+    default:
+        break;
+}
+
+include 'action/disconnect.php';
 ?>
