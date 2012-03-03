@@ -16,7 +16,7 @@ setlocale(LC_ALL, 'ru_RU.utf8');
     
     $host          = $_SERVER["HTTP_HOST"];
 	
-    echo "document_root -> $document_root<br/>host -> $host";
+//    echo "document_root -> $document_root<br/>host -> $host";
         
     if (mysql_errno() <> 0) exit("Ошибка");
 ?>

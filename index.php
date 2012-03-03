@@ -39,14 +39,39 @@ if(isset ($_SESSION[id])) include 'query/checkauth.php';
 
 switch ($attributes[act]) {
     
-        case 'auth':
-//        include 'main/header.php';
+  case 'auth':
+        include 'main/header.php';
         include 'query/authentication.php';
        break;
+   
+   case 'main':
+       include 'main/header.php';
+       include 'main/selector.php';       
+       break;
+   
+   case 'post':
+       include 'main/header.php';
+       include 'main/selector.php';
+       include 'main/main.php';
+       break;
+   
+   case 'registration':
+       include 'main/header.php';
+       include 'main/selector.php';
+       break;
 
-    default:
+    case "logout":
+        include 'action/logout.php'; 
+        break;
+ 
+     case 'statistics':
+         include 'action/statistics.php';
+         break;
+     
+    default :
+        include 'action/redirect.php';
         break;
 }
-
+include 'main/footer.php';
 include 'action/disconnect.php';
 ?>
