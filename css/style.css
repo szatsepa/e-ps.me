@@ -19,128 +19,21 @@ html, body {
   padding:0;
   width:100%;
   height:100%;
-   font-family: sans-serif;	
-	font-size: 10pt;
+   font-family: arial, sans-serif;  	
+ font-size: 10pt;
 }
-div.selector {
-	background-color:#cccccc;
-	border-top:3px solid #a7a7a7;
-	border-bottom:1px solid white;
-	font-size:4ex;
-	padding: 0 0 0 0;
-        padding-left: 22px;
-	margin-top:7px;
-/*        margin-left: 22px; */
-	width:98%;
-        height: 28px;
-/*        outline: 1px solid red;*/
-	} 
-div.selector2{
-        position: relative;
-        float: left;
-        width: 185px;
-	right: 5px;
-	margin:0 0 0 0;
-	padding:0 0 0 0;
-	font-size:8pt;    
-            
-        }
-span.selector {
-	display: inline;
-	margin-right: 2px;
-	}
-
-span.selector2 {
-	display: inline;
-	position: relative;
-        float: left;
-	right: 12px;
-	margin:0 0 0 0;
-	padding:0 0 0 2px;
-	font-size:8pt;
-	
-}
-
-span.selector3 {
-	display: inline;
-	position: absolute;
-	right: 5px;
-	margin:0 0 0 3px;
-	padding-top: 5px;
-	font-size: 1ex;
-}
-input.submit3 {
-	font-size: 8pt;
-	font-weight: bold;
-/*	width:2em;*/
-	margin-left: 3px;
-	margin-bottom: 0px;
-	margin-right: 0px;
-	margin-top:0px;	
-	position:relative;	
-}
-div.images{
+div.envelope_base{
     position: relative;
-    margin-left: 50px;
-    margin-top: 30px;
-    padding-left: 60px;
-}
-div.img_red{
-    position: relative;
-    float: left;
-}
-div.registration { 
-    margin:20px auto;
-    width:310px;
-    padding:20px;
-    border:1px solid #ccc; 
-    background:#fff;
-    font-family:Arial;
-}
-fieldset { 
-    border:0;
-    margin:0;
-    padding:0; }
-label { 
-    display:block;
-}
-input.text,textarea { 
-    width:300px;
-    font:12px/12px 'courier new',courier,monospace;
-    color:#333;
-    padding:3px;
-    margin:1px 0;
-    border:1px solid #ccc;
-}
-input.submit { padding:2px 5px;
-         font:bold 12px/12px verdana,arial,sans-serif; 
-}
-input.list{
-    font-weight: bold;
-}
-div.seconds{
-    position: relative;
-    float: left; 
-    font-size: 16px;
-    font-weight: bolder;
-    padding: 3px 7px 3px 2px;
-    width: 64px;
-/*    outline: 1px solid greenyellow;*/
+    width: 100%;
 }
 div.envelope{
     position: relative;
     float: left;
-    width: 360px;
-    height: 136px;
+    width: 801px;
+    height: 563px;
+/*    margin: 10px auto 0;*/
+margin-top: 20px;
+margin-left: 120px;
+    display: block;
 /*    outline: 1px solid blue;*/
-}
-div.envelope_txt{
-    position: relative;
-    float: right;
-    width: 360px;
-    height: 120px;
-    margin-right: 220px;
-    padding-left: 12px;
-    padding-top: 12px;
-/*    outline: 1px solid green;*/
 }

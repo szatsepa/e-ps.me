@@ -22,7 +22,7 @@ $resolution = quote_smart($attributes[scr_W]."x".$attributes[scr_H]);
 
 $agent = quote_smart($_SERVER["HTTP_USER_AGENT"]);
 
-$query = "INSERT INTO statistics 
+$query = "INSERT INTO eps_statistics 
                         (ip,
                          user,
                         resolution,
@@ -36,10 +36,5 @@ $query = "INSERT INTO statistics
 
 $act_stat = mysql_query($query) or die($query);
 
-//if(!isset ($_SESSION[id])){
-//    header("location:index.php?act=post");
-//}  else {
-//    header("location:index.php?act=post"); 
-//}
-header("location:index.php?act=post"); 
+header("location:index.php?act=main"); 
 ?>

@@ -14,7 +14,7 @@ class User{
     
     function setUser($id){  
         
-        $query = "SELECT * FROM users WHERE id = $id";
+        $query = "SELECT * FROM eps_users WHERE id = $id";
         
         $result = mysql_query($query) or die ($query);
         

@@ -46,12 +46,13 @@ switch ($attributes[act]) {
    
    case 'main':
        include 'main/header.php';
-       include 'main/selector.php';       
+//       include 'main/selector.php';
+       include 'main/main.php';
        break;
    
    case 'post':
        include 'main/header.php';
-       include 'main/selector.php';
+//       include 'main/selector.php';
        include 'main/main.php';
        break;
    

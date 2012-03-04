@@ -5,7 +5,7 @@
  */
 $code = quote_smart($attributes[code]);
 
-        $query = "SELECT id FROM users WHERE pwd = $code";
+        $query = "SELECT id FROM eps_users WHERE pwd = $code";
         
         $result = mysql_query($query) or die($query);
         
