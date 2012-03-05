@@ -45,15 +45,23 @@ switch ($attributes[act]) {
        break;
    
    case 'main':
+       $title = "Почта счастья!";
        include 'main/header.php';
 //       include 'main/selector.php';
        include 'main/main.php';
        break;
    
-   case 'post':
+   case 'epsmail':
+       include 'query/eps_mail.php';
+       break;
+   
+   case 'info':
        include 'main/header.php';
-//       include 'main/selector.php';
-       include 'main/main.php';
+       include 'main/add_email.php';
+       break;
+   
+   case 'addmail':
+       include 'action/add_email.php';
        break;
    
    case 'registration':

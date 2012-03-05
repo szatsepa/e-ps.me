@@ -19,12 +19,14 @@ html, body {
   padding:0;
   width:100%;
   height:100%;
-   font-family: arial, sans-serif;  	
+ font-family: arial, sans-serif;  	
  font-size: 10pt;
 }
 div.envelope_base{
     position: relative;
-    width: 100%;
+    width: 1024px;
+    height: 800px;
+/*    outline: 1px solid aqua;*/
 }
 div.envelope{
     position: relative;
@@ -32,8 +34,105 @@ div.envelope{
     width: 801px;
     height: 563px;
 /*    margin: 10px auto 0;*/
-margin-top: 20px;
-margin-left: 120px;
+    margin-top: 20px;
+    margin-left: 120px;
+    background-image: url("../images/cover.png");
+    background-color: aquamarine;
     display: block;
-/*    outline: 1px solid blue;*/
+}
+div.stamp{
+    position: relative;
+    background-image: url(../images/stamp.gif);
+    width: 145px;
+    height: 145px;
+    margin-top: 35px;
+    margin-left: 613px;
+}
+div.recipe{
+    position: relative;
+    width: 220px;
+    height: 24px;
+    margin-left: 563px;
+    margin-top: 52px;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+div.send{
+    position: relative;
+    width: 220px;
+    height: 24px;
+    margin-left: 563px;
+    margin-top: 12px;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+div.submit_cover{
+    position: relative;
+    width: 142px;
+    height: 31px;
+    margin-left: 643px;
+    margin-top: 12px;
+}
+div.add_mail{
+    position: relative;
+    float: left;
+    width: 801px;
+    height: 563px;
+/*    margin: 10px auto 0;*/
+    margin-top: 20px;
+    margin-left: 120px;
+/*    background-image: url("../images/cover.png");*/
+    background-color: #ffffff;
+    display: block;
+    z-index: 0;
+/*    outline: 1px solid brown;*/
+}
+div.txt_add_mail{
+    position: absolute;
+    width: 560px;
+    height: 28px;
+    margin-left: 5px;
+    margin-top: 22px;
+/*    outline: 1px solid red;*/
+    z-index: 1;
+    font: 14px Arial;
+    font-weight: bold;
+    color: #000000;
+}
+div.stamp_add_mail{
+    position: absolute;
+    float: right;
+    background-image: url(../images/stamp.gif);
+    width: 145px;
+    height: 145px;
+    margin-top: 35px;
+    margin-left: 613px;
+/*    margin-right: 25px;*/
+    z-index: 2;
+/*    outline: 1px solid gold;*/
+}
+div.input_mail{
+    position: absolute;
+    width: 220px;
+    height: 28px;
+    margin-left: 115px;
+    margin-top: 62px;
+/*    outline: 1px solid red;*/
+    z-index: 3;
+    font: 14px Arial;
+    font-weight: bold;
+    color: #000000;
+    padding-top: 2px;
+    padding-left: 3px;
+}
+div.confirm{
+    position: absolute;
+    width: 220px;
+    height: 28px;
+    margin-left: 185px;
+    margin-top: 102px;
+/*    outline: 1px solid red;*/
+    z-index: 4;
+/*    background-color: #aaaaaa;*/
+    
 }
