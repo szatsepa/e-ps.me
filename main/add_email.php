@@ -3,10 +3,15 @@
 /*
  * created by arcady.1254@gmail.com 5/3/2012
  */
-if(isset ($attributes[email]) && $attributes[err] == 1){
+if($attributes[err] == 1){
+    
+    $email = $attributes[email];
+    
+    $eps = $attributes[eps];
     ?>
 <script language="javascript">
-    alert("К такому адресу уже прикреплен валшебний код!!!");
+    
+    alert("К такому адресу уже прикреплен валшебний код!!!\n \t\t\t\t<?php echo $eps;?>");
 </script>
     <?php
 }
@@ -18,14 +23,14 @@ if(isset ($attributes[email]) && $attributes[err] == 1){
             </div>
         <form id="cnf">
             <div class="input_mail">
-                <input type="text" name="email" size="22"/>
+                <input type="text" name="email" size="22" value="<?php echo $email;?>"/>
             </div>
             <div class="confirm">
                 <input type="button" value="Подтвердить" onclick="javascript:_addMail('cnf');"/>
             </div>
             </form>
         <div class="stamp_add_mail">
-            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=info';"/> 
+            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=main';"/> 
         </div>
    </div>
 </div>

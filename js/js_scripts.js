@@ -3,7 +3,7 @@
  */
 
 function _emlWalidation(eml){
-    
+     
     var email = eml;
         
         var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -51,4 +51,24 @@ function _addMail(ID){
             document.location = "http://e-ps.me/index.php?act=addmail&email="+email;
         }
         
+}
+function _writeUser(ID){
+   
+   var nus = parseInt(ID.substr(9,1));
+   
+   var act = "";
+   
+   if(nus == 0){
+       act = "addus";
+   }else{
+       act = "chngus";
+   }
+   
+   var obj = document.getElementById(ID);
+      
+   alert("<form action='index.php?act="+act+"' method='post'><input type='hidden' name='surname' value='"+obj.surname.value+"'/><input type='hidden' name='name' value='"+obj.name.value+"'/><input type='hidden' name='patronymic' value='"+obj.patronymic.value+"'/><input type='hidden' name='residens' value='"+obj.residens.value+"'/><input type='hidden' name='email' value='"+obj.email.value+"'/><input type='hidden' name='phone' value='"+obj.phone.value+"'/><input type='hidden' name='word' value='"+obj.word.value+"'/><input type='hidden' name='banc_card' value='"+obj.banc_card.value+"'/></form>");
+   
+   document.write("<form action='index.php?act="+act+"' method='post'><input type='hidden' name='surname' value='"+obj.user_id.value+"'/><input type='hidden' name='surname' value='"+obj.surname.value+"'/><input type='hidden' name='name' value='"+obj.name.value+"'/><input type='hidden' name='patronymic' value='"+obj.patronymic.value+"'/><input type='hidden' name='residens' value='"+obj.residens.value+"'/><input type='hidden' name='email' value='"+obj.email.value+"'/><input type='hidden' name='phone' value='"+obj.phone.value+"'/><input type='hidden' name='word' value='"+obj.word.value+"'/><input type='hidden' name='banc_card' value='"+obj.banc_card.value+"'/></form>");
+   document.forms[0].submit();
+   
 }

@@ -37,8 +37,84 @@ div.envelope{
     margin-top: 20px;
     margin-left: 120px;
     background-image: url("../images/cover.png");
-    background-color: aquamarine;
+/*    background-color: aquamarine;*/
     display: block;
+}
+div.registration{
+    position: relative;
+    float: left;
+    width: 801px;
+    height: 563px;
+/*    margin: 10px auto 0;*/
+    margin-top: 20px;
+    margin-left: 120px;
+    background-image: url(../images/registration_bg.png);
+    background-color: white;
+    display: block;    
+}
+div.regs_fields{
+    position: absolute;
+    width: 220px;
+    height: 225px;
+    margin-top: 50px;
+    margin-left: 185px;
+    z-index: 1;
+}
+div.r_surname{
+    position: relative;
+    width: 220px;
+    height: 28px;
+    padding-top: 1px;
+    padding-bottom: 0;
+/*    outline: 1px solid goldenrod;    */
+}
+/*div.regs_links{
+    position: absolute;
+    width: 170px;
+    height: 235px;
+    margin-top: 50px;
+    margin-left: 438px;
+    z-index: 2;
+    outline: 1px solid red;   
+}
+div.r_link{
+    position: relative;
+    width: 170px;
+    height: 28px;
+    padding-top: 1px;
+    padding-bottom: 0;
+    outline: 1px solid greenyellow; 
+}*/
+div.reg_index{
+    position: absolute;
+    width: 370px;
+    height: 75px;
+    margin-top: 270px;
+    margin-left: 18px;
+    z-index: 2;
+/*    outline: 1px solid blueviolet;*/
+}
+div.r_index_0{
+    position: absolute;
+    width: 44px;
+    height: 72px;
+/*    margin-left: 0;*/
+    margin-top: 0;
+    background-image: url(../images/symbols/index_plase.jpg);
+    z-index: 0;
+/*    outline: 1px solid aqua;*/
+}
+div.reg_submit{
+    position: absolute;
+/*    outline: 1px solid red;*/
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    margin-top: 240px;
+    margin-left: 478px;
+    z-index: 3;
+    padding-left: 6px;
+    padding-top: 12px;
 }
 div.stamp{
     position: relative;
@@ -134,5 +210,46 @@ div.confirm{
 /*    outline: 1px solid red;*/
     z-index: 4;
 /*    background-color: #aaaaaa;*/
-    
+}
+div.selector {
+	background-color:#cccccc;
+	border-top:3px solid #a7a7a7;
+	border-bottom:1px solid white;
+	font-size:4ex;
+	padding: 0 0 0 0;
+        padding-left: 22px;
+	margin-top:7px;
+/*        margin-left: 22px; */
+	width:98%;
+        height: 28px;
+/*        outline: 1px solid red;*/
+} 
+span.selector2 {
+	display: inline;
+	position: relative;
+        float: left;
+	right: 12px;
+	margin:0 0 0 0;
+	padding:0 0 0 2px;
+	font-size:8pt;
+	
+}
+
+span.selector3 {
+	display: inline;
+	position: absolute;
+	right: 5px;
+	margin:0 0 0 3px;
+	padding-top: 5px;
+	font-size: 1ex;
+}
+input.submit3 {
+	font-size: 8pt;
+	font-weight: bold;
+/*	width:2em;*/
+	margin-left: 3px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-top:0px;	
+	position:relative;	
 }

@@ -47,7 +47,7 @@ switch ($attributes[act]) {
    case 'main':
        $title = "Почта счастья!";
        include 'main/header.php';
-//       include 'main/selector.php';
+       include 'main/selector.php';
        include 'main/main.php';
        break;
    
@@ -56,7 +56,9 @@ switch ($attributes[act]) {
        break;
    
    case 'info':
+       $title = "Регистрация адреса.";
        include 'main/header.php';
+       include 'main/selector.php';
        include 'main/add_email.php';
        break;
    
@@ -64,9 +66,20 @@ switch ($attributes[act]) {
        include 'action/add_email.php';
        break;
    
-   case 'registration':
+   case 'reg':
+       $title = "Регистрация на $host.";
        include 'main/header.php';
        include 'main/selector.php';
+       include 'main/registration.php';
+       break;
+   
+   case 'addus':
+       include 'action/add_user.php';
+       break;
+   
+   case 'chngus':
+       include 'main/header.php';
+       include 'action/change_user.php';
        break;
 
     case "logout":

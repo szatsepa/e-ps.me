@@ -15,7 +15,7 @@ if (!isset ($_SESSION[id])) {
           <form id="13" action="index.php?act=auth" method="post">
             <input id="psw" type="password" name="code" size="18" value="" style='font-size:8pt;'  />
             <input type="submit" value="Войти" class='submit3' style='color:green'/>
-            <input type="button" value="Регистрация" class='submit3' style='color:green' onclick="document.location='http://<?php echo $host;?>/index.php?act=registration'"/>
+            <input type="button" value="Регистрация" class='submit3' style='color:green' onclick="document.location='http://<?php echo $host;?>/index.php?act=reg'"/>
           </form>  
      </span>      
    
@@ -26,7 +26,8 @@ if (!isset ($_SESSION[id])) {
 <span class="selector3">
     
 <form action='index.php?act=logout' method='post'>
-    <?php echo $user->data[name]." ". $user->data[surname];?>  
+    <?php echo $user->data[name]." ". $user->data[surname];?>
+    <input type='button' class='submit3' value='Кабинет' style='color:green;' onclick="javascript:document.location='http://<?php echo $host;?>/index.php?act=reg';" />
     <input type='submit' class='submit3' value='X' style='color:red'/>
 </form>
 </span>
