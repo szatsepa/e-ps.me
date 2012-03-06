@@ -60,3 +60,6 @@ if(isset($user))$us = 1;
         </div>
     </div>
 </div>
+<script language="javascript">
+
+</script>

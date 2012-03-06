@@ -64,11 +64,11 @@ function _writeUser(ID){
        act = "chngus";
    }
    
-   var obj = document.getElementById(ID);
-      
-   alert("<form action='index.php?act="+act+"' method='post'><input type='hidden' name='surname' value='"+obj.surname.value+"'/><input type='hidden' name='name' value='"+obj.name.value+"'/><input type='hidden' name='patronymic' value='"+obj.patronymic.value+"'/><input type='hidden' name='residens' value='"+obj.residens.value+"'/><input type='hidden' name='email' value='"+obj.email.value+"'/><input type='hidden' name='phone' value='"+obj.phone.value+"'/><input type='hidden' name='word' value='"+obj.word.value+"'/><input type='hidden' name='banc_card' value='"+obj.banc_card.value+"'/></form>");
+  var obj = document.getElementById(ID);
+//   
+//   alert("<form action='index.php?act="+act+"' method='post'><input type='hidden' name='surname' value='"+obj.surname.value+"'/><input type='hidden' name='name' value='"+obj.name.value+"'/><input type='hidden' name='patronymic' value='"+obj.patronymic.value+"'/><input type='hidden' name='residens' value='"+obj.residens.value+"'/><input type='hidden' name='email' value='"+obj.email.value+"'/><input type='hidden' name='phone' value='"+obj.phone.value+"'/><input type='hidden' name='word' value='"+obj.word.value+"'/><input type='hidden' name='bank_card' value='"+obj.bank_card.value+"'/><input type='hidden' name='user_id' value='"+obj.user_id.value+"'/></form>");
    
-   document.write("<form action='index.php?act="+act+"' method='post'><input type='hidden' name='surname' value='"+obj.user_id.value+"'/><input type='hidden' name='surname' value='"+obj.surname.value+"'/><input type='hidden' name='name' value='"+obj.name.value+"'/><input type='hidden' name='patronymic' value='"+obj.patronymic.value+"'/><input type='hidden' name='residens' value='"+obj.residens.value+"'/><input type='hidden' name='email' value='"+obj.email.value+"'/><input type='hidden' name='phone' value='"+obj.phone.value+"'/><input type='hidden' name='word' value='"+obj.word.value+"'/><input type='hidden' name='banc_card' value='"+obj.banc_card.value+"'/></form>");
+   document.write("<form action='index.php?act="+act+"' method='post'><input type='hidden' name='user_id' value='"+obj.user_id.value+"'/><input type='hidden' name='surname' value='"+obj.surname.value+"'/><input type='hidden' name='name' value='"+obj.name.value+"'/><input type='hidden' name='patronymic' value='"+obj.patronymic.value+"'/><input type='hidden' name='residens' value='"+obj.residens.value+"'/><input type='hidden' name='email' value='"+obj.email.value+"'/><input type='hidden' name='phone' value='"+obj.phone.value+"'/><input type='hidden' name='word' value='"+obj.word.value+"'/><input type='hidden' name='bank_card' value='"+obj.bank_card.value+"'/></form>");
    document.forms[0].submit();
    
 }

@@ -3,7 +3,7 @@
 /*
  * created by arcady.1254@gmail.com 6/3/2012
  */
-$id = intval($attributes[id]);
+$id = intval($attributes[user_id]);
 
 $surname = quote_smart($attributes[surname]);
 
@@ -15,7 +15,7 @@ $residens = quote_smart($attributes[residens]);
 
 $email = quote_smart($attributes[email]);
 
-$phone = quote_smart($attributes[phone]);
+$phone = "$attributes[phone]";
 
 $word = quote_smart($attributes[word]);
 

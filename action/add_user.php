@@ -14,7 +14,7 @@ $residens = quote_smart($attributes[residens]);
 
 $email = quote_smart($attributes[email]);
 
-$phone = quote_smart($attributes[phone]);
+$phone = "$attributes[phone]";
 
 $word = quote_smart($attributes[word]);
 
