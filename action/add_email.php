@@ -31,7 +31,7 @@ if($new_id){
     
     mysql_query($query) or die($query);
     
-    if(_gomail($email, $eps_cod)){
+    if(_gomail($email, $eps_cod, $key_word)){
         
                  header("location:index.php?act=reg&eps=$eps_cod&key=$key_word");
         }
@@ -47,14 +47,14 @@ if($new_id){
     $key = $row[key_word];
     
     
-    if(_gomail($email, $eps_cod)){
+    if(_gomail($email, $eps_cod, $key_word)){
      header("location:index.php?act=auth&code=$key");
 }
     
 }
-function _gomail($email, $eps){
+function _gomail($email, $eps, $key){
     
-            $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\n Сикреднaйе слово для входа - $key_word.\n C уважением. Администрация. ";              
+            $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\n Сикреднaйе слово для входа - $key.\n C уважением. Администрация. ";              
              
             $headers = 'From: administrator@'. $host. "\r\n";
             
@@ -76,8 +76,6 @@ $simbol_array = array('A','S','D','F','G','H','J','K','L','Q','W','E','R','T','Y
 for($i = 0;$i<$str_cnt;$i++){
     $cod .= $simbol_array[rand(0, count($simbol_array))];
 }
-
-$cod .= '_';
 
 for($i = 0;$i<$num_cnt;$i++){
     $cod .= rand(0, 9);

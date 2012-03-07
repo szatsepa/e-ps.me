@@ -32,9 +32,9 @@ $eps_array = str_split($eps);
                 $ml = ($i*45)."px";
                  
                  if($eps){
-                     echo "<div class='r_index_0' style='margin-left: ".$ml.";background-image: url(../images/symbols/".  strtolower($eps_array[$i]).".png);'>";
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/".  strtolower($eps_array[$i]).".png'/>";
                  }else{
-                     echo "<div class='r_index_0' style='margin-left: ".$ml.";background-image: url(../images/symbols/index_plase.jpg);'>";
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/index_plase.jpg'/>";
                  }
                 echo "</div>";
           }?>

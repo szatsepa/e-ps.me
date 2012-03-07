@@ -6,13 +6,19 @@
 
 $email = $attributes[send];
 
-$query = "SELECT eps_cod FROM eps_sender WHERE email = '$email'";
+$recipe = $attributes[recipe];
+
+//$recipe = quote_smart($recipe);
+
+$query = "SELECT eps_cod, id FROM eps_sender WHERE email = '$email'";
 
 $result = mysql_query($query) or die($query);
 
 $row = mysql_fetch_assoc($result);
 
 $eps = $row[eps_cod];
+
+$id = $row[id]; 
 
             $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\n C уважением. Администрация. ";              
              
@@ -22,11 +28,13 @@ $eps = $row[eps_cod];
             
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
             
-            echo "<br/>$email, 'Ваш валшебный ключ', $message, $headers<br/>";
-        
             mail($email, 'Ваш валшебный ключ', $message, $headers);
             
-            header("location:index.php?act=main&eps=$eps");
+ $query = "INSERT INTO eps_recipient (sender_id, recipient) VALUES ($id, '$recipe')";
+ 
+ mysql_query($query) or die($query);
+            
+            header("location:index.php?act=main");
                 
                  ?>
 

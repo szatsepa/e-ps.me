@@ -8,8 +8,14 @@
 
 $us = 0;
 
-if(isset($user))$us = 1;
+if(isset($user)){
+    $us = 1;
+    
+    $eps = $user->data[eps];
 
+    $eps_array = str_split($eps);
+
+}
 ?>
 <br/>
 <div class="envelope_base">
@@ -51,12 +57,17 @@ if(isset($user))$us = 1;
         <div class="stamp">
             <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=main';"/>
         </div>
-        <div class="reg_index">
+            <div class="reg_index">
             
             <?php for($i=0;$i<8;$i++){
                 $ml = ($i*45)."px";
-                echo "<div class='r_index_0' style='margin-left: ".$ml.";'></div>";
-                
+                 
+                 if($eps){
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/".  strtolower($eps_array[$i]).".png'/>";
+                 }else{
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/index_plase.jpg'/>";
+                 }
+                echo "</div>";
           }?>
         </div>
     </div>

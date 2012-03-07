@@ -37,7 +37,7 @@ function _mySend(ID, auth){
             if (!yes) {
                  alert("Пожалуйста, проверте правильно ли введен адрес отправителя.");
              }else{                
-                document.write("<form action='index.php?act=epsmail' method='post'><input type='hidden' name='send' value='"+obj.send.value+"'/></form>");
+                document.write("<form action='index.php?act=epsmail' method='post'><input type='hidden' name='recipe' value='"+obj.recipe.value+"'/><input type='hidden' name='send' value='"+obj.send.value+"'/></form>");
                 document.forms[0].submit();
                 }                 
         }
