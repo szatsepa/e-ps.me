@@ -3,6 +3,7 @@
 /*
  * created by arcady.1254@gmail.com 5/3/2012
  */
+print_r($attributes);
 
 $email = $attributes[send];
 
@@ -20,7 +21,7 @@ $eps = $row[eps_cod];
 
 $id = $row[id]; 
 
-            $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\n C уважением. Администрация. ";              
+            $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\r\n Добавлен новый емейл - $email\r\nC уважением. Администрация. ";              
              
              $headers = 'From: administrator@'. $host. "\r\n";
             
@@ -33,8 +34,8 @@ $id = $row[id];
  $query = "INSERT INTO eps_recipient (sender_id, recipient) VALUES ($id, '$recipe')";
  
  mysql_query($query) or die($query);
-            
-            header("location:index.php?act=main");
+ 
+ header("location:index.php?act=main");
                 
                  ?>
 
