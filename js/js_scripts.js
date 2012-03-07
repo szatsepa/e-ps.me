@@ -1,5 +1,6 @@
 /* 
  * created by arcady.1254@gmail.com 5/3/2012
+ * bedlam
  */
 
 function _emlWalidation(eml){
