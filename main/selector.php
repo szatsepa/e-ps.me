@@ -10,12 +10,11 @@
 
 if (!isset ($_SESSION[id])) {
     ?>
-    <span class="selector2">
+    <span class="selector3">
     
           <form id="13" action="index.php?act=auth" method="post">
             <input id="psw" type="password" name="code" size="18" value="" style='font-size:8pt;'  />
-            <input type="submit" value="Войти" class='submit3' style='color:green'/>
-            <input type="button" value="Регистрация" class='submit3' style='color:green' onclick="document.location='http://<?php echo $host;?>/index.php?act=reg'"/>
+            <input type="submit" value="Кабинет" class='submit3' style='color:green'/>
           </form>  
      </span>      
    

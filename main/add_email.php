@@ -14,6 +14,10 @@ if($attributes[err] == 1){
     alert("К такому адресу уже прикреплен валшебний код!!!\n \t\t\t\t<?php echo $eps;?>");
 </script>
     <?php
+}else{
+    $email = $user->data[email];
+    
+    $key_word = $user->data[key_word]; 
 }
 ?>
 <div class="envelope_base">

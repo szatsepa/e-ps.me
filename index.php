@@ -11,6 +11,13 @@ if(!isset($_SESSION)){
 
     session_start();  
 }
+if(isset($attributes[id]) && $_SESSION[auth] == 0){
+         
+   $_SESSION[id] = $attributes[id];
+   
+   $_SESSION[auth] = 1;
+         
+}
 if(isset($attributes[di]) && !isset ($_SESSION[auth])){
          
    $_SESSION[id] = $attributes[di];
@@ -18,24 +25,26 @@ if(isset($attributes[di]) && !isset ($_SESSION[auth])){
    $_SESSION[auth] = 1;
          
 }
-
-//print_r($_REQUEST);
-//echo "<br/>";
+if($_SESSION[auth] != 1)$_SESSION[auth] = 0;
 
 //print_r($_SESSION);
 //echo "<br/>";
-print_r($attributes);  
+//print_r($attributes);  
 
+include 'classes/User.php';
   
 include 'action/connect.php';
 
 include 'action/quotesmart.php';
 
-if($attributes[act] != 'registration'){
-
-if(isset ($_SESSION[id])) include 'query/checkauth.php';
-
+if(isset ($_SESSION[id])) {
+    include 'query/checkauth.php';
+}else{
+    include 'query/my_mail.php';
 }
+ 
+//echo "<br/>";
+//print_r($user);
 
 switch ($attributes[act]) {
     
@@ -78,7 +87,7 @@ switch ($attributes[act]) {
        break;
    
    case 'chngus':
-       include 'main/header.php';
+//       include 'main/header.php';
        include 'action/change_user.php';
        break;
 

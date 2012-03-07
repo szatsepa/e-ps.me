@@ -4,7 +4,10 @@
  * created by arcady.1254@gmail.com 3/3/2012
  */ 
 $eps = $user->data[eps];
-//echo "$eps<br/>";
+
+$email = $user->data[email];
+
+$eps_array = str_split($eps);
 ?>
 <div class="envelope_base">
     <div class="envelope">
@@ -17,12 +20,25 @@ $eps = $user->data[eps];
             <input type="text" name="recipe" size="22" required/>
         </div>
         <div class="send">
-            <input type="text" name="send" size="22" required/>
+            <input type="text" name="send" size="22" value="<?php echo $email;?>" required/>
         </div>
             <div class="submit_cover">
-                <input type="image" src="http://e-ps.me/images/submit_cover.jpg"  alt="BUTTON" onclick="javascript:_mySend('cover');"/>
+                <input type="image" src="http://e-ps.me/images/submit_cover.jpg"  alt="BUTTON" onclick="javascript:_mySend('cover',<?php echo $_SESSION[auth];?>);"/>
             </div>
     </form>
+            <div class="reg_index" style="margin-top: 100px;">
+            
+            <?php for($i=0;$i<8;$i++){
+                $ml = ($i*45)."px";
+                 
+                 if($eps){
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";background-image: url(../images/symbols/".  strtolower($eps_array[$i]).".png);'>";
+                 }else{
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";background-image: url(../images/symbols/index_plase.jpg);'>";
+                 }
+                echo "</div>";
+          }?>
+        </div>
     </div>
 </div>
 

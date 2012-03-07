@@ -17,6 +17,7 @@ if(isset($user))$us = 1;
      <form id="reg_form_<?php echo $us;?>">   
         <div class="regs_fields">
             <input type="hidden" name="user_id" value="<?php echo $user->data[id];?>"/>
+            <input type="hidden" name="email_id" value="<?php echo $user->data[email_id];?>"/> 
             <div class="r_surname">
                 <input size="26" type="text" required name="surname" value="<?php echo $user->data[surname];?>"/> 
             </div>
@@ -36,7 +37,7 @@ if(isset($user))$us = 1;
                 <input size="26" type="text" required name="phone" value="<?php echo $user->data[phone];?>"/>
             </div>
             <div class="r_surname">
-                <input size="26" type="text" name="word" value="<?php echo $user->data[pwd];?>"/>
+                <input size="26" type="text" name="word" value="<?php echo $user->data[key_word];?>"/>
             </div>
             <div class="r_surname">
                 <input size="26" type="text" required name="bank_card" value="<?php echo $user->data[bank_card];?>"/>

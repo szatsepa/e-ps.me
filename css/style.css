@@ -98,11 +98,15 @@ div.r_index_0{
     position: absolute;
     width: 44px;
     height: 72px;
-/*    margin-left: 0;*/
-    margin-top: 0;
-    background-image: url(../images/symbols/index_plase.jpg);
+    margin-top: 12px;
     z-index: 0;
-/*    outline: 1px solid aqua;*/
+    outline: 1px solid red;
+}
+div.r_index_1{
+    position: absolute;
+    width: 44px;
+    height: 72px;
+    z-index: 0;
 }
 div.reg_submit{
     position: absolute;

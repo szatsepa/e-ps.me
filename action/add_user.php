@@ -26,7 +26,7 @@ $query = "INSERT INTO eps_users (surname,
                                  address,
                                  email,
                                  phone,
-                                 pwd,
+                                 key_word,
                                  bank_card)
                  VALUES 
                         ($surname, 
@@ -40,5 +40,8 @@ $query = "INSERT INTO eps_users (surname,
 
 $result = mysql_query($query) or die($query);
 
-header("location:index.php?act=reg");
+
+$id = mysql_insert_id();
+
+header("location:index.php?act=reg&id=$id"); 
 ?>

@@ -5,6 +5,8 @@
  */
 $id = intval($attributes[user_id]);
 
+$email_id = intval($attributes[email_id]);
+
 $surname = quote_smart($attributes[surname]);
 
 $name = quote_smart($attributes[name]);
@@ -26,21 +28,23 @@ $query = "UPDATE eps_users
                                name = $name,
                                patronymic = $patronymic,
                                address = $residens,
-                               email = $email,
                                phone = $phone,
-                               pwd = $word,
+                               key_word = $word,
                                bank_card = $bank_card
                             WHERE id = $id";
 
 $result = mysql_query($query) or die($query);
 
-if(!$result){
-   
-}  else {
-//    header("location:index.php?act=reg");
-}
+mysql_query("UPDATE eps_sender SET email = $email WHERE id = $email_id");
 
- echo "$query";
+//if(!$result){
+//   
+//}  else {}
+
+header("location:index.php?act=reg&id=$id");
+
+
+// echo "$query";
 
 
 ?>

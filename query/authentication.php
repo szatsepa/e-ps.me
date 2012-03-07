@@ -5,7 +5,7 @@
  */
 $code = quote_smart($attributes[code]);
 
-        $query = "SELECT id FROM eps_users WHERE pwd = $code";
+        $query = "SELECT id FROM eps_users WHERE key_word = $code";
         
         $result = mysql_query($query) or die($query);
         
@@ -25,7 +25,7 @@ $code = quote_smart($attributes[code]);
                
 ?>
 
-<form action="index.php?act=post" method="post">
+<form action="index.php?act=main" method="post">
     <script language="javascript">
     document.write ('<input name="scr_W" type="hidden" value="'+ screen.width + '"><input name="scr_H" type="hidden" value="'+screen.height + '"><input name="colorDepth" type="hidden" value="'+screen.colorDepth+ '"></form>');
     document.forms[0].submit();
@@ -35,11 +35,11 @@ $code = quote_smart($attributes[code]);
     }else{
     ?>
 <script language="javascript">   
-  if(!confirm("Зарегистрироватся???")){  
-         document.write ('<form action="index.php?act=main" method="post"><input name="scr_W" type="hidden" value="'+ screen.width + '"><input name="scr_H" type="hidden" value="'+screen.height + '"><input name="colorDepth" type="hidden" value="'+screen.colorDepth+ '"></form>');
+  if(confirm("Зарегистрироватся???")){  
+         document.write ('<form action="index.php?act=info" method="post"><input name="scr_W" type="hidden" value="'+ screen.width + '"><input name="scr_H" type="hidden" value="'+screen.height + '"><input name="colorDepth" type="hidden" value="'+screen.colorDepth+ '"></form>');
          document.forms[0].submit();
     }else{
-        document.write ('<form action="index.php?act=registration" method="post"></form>');
+        document.write ('<form action="index.php?act=main" method="post"></form>');
         document.forms[0].submit();   
     } 
 </script>    
