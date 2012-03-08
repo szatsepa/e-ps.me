@@ -19,10 +19,11 @@ if (isset($_SESSION['auth']) and !isset($attributes[out])) {
      
     }
     
-    if(!$user){
+    if(!($user->data)){
         $_SESSION[auth] = 0;
         unset($_SESSION[id]);
         unset($_COOKIE[di]);
+        header("location:index.php?act=reg");
     }
 }
 ?>

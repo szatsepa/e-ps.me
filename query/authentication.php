@@ -25,17 +25,22 @@ $code = quote_smart($attributes[code]);
                
 ?>
 
-<form action="index.php?act=main" method="post">
+
     <script language="javascript">
-    document.write ('<input name="scr_W" type="hidden" value="'+ screen.width + '"><input name="scr_H" type="hidden" value="'+screen.height + '"><input name="colorDepth" type="hidden" value="'+screen.colorDepth+ '"></form>');
+//        alert(<?php echo $query;?>);
+    document.write ('<form action="index.php?act=main" method="post"><input name="scr_W" type="hidden" value="'+ screen.width + '"><input name="scr_H" type="hidden" value="'+screen.height + '"><input name="colorDepth" type="hidden" value="'+screen.colorDepth+ '"></form>');
     document.forms[0].submit();
     </script>
     
     <?php 
     }else{
+        
+        unset($_SESSION[id]);
+        unset ($_SESSION[auth]);
+        unset($_COOKIE[di]);
     ?>
 <script language="javascript">   
- 
+//        alert(<?php echo $query;?>); 
          document.write ('<form action="index.php?act=info" method="post"><input name="scr_W" type="hidden" value="'+ screen.width + '"><input name="scr_H" type="hidden" value="'+screen.height + '"><input name="colorDepth" type="hidden" value="'+screen.colorDepth+ '"></form>');
          document.forms[0].submit();
     

@@ -8,7 +8,7 @@
 <div class="selector">&nbsp;
 <?php 
 
-if (!isset ($_SESSION[id])) {
+if (!isset ($_SESSION[id]) && $_SESSION[auth] == 0) { 
     ?>
     <span class="selector3">
     

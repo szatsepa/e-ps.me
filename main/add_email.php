@@ -3,7 +3,7 @@
 /*
  * created by arcady.1254@gmail.com 5/3/2012
  */
-if($attributes[err] == 1){
+if($attributes[err] == 1 && $_SESSION[id] != 0){
     
     $email = $attributes[email];
     

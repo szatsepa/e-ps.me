@@ -31,9 +31,11 @@ if($new_id){
     
     mysql_query($query) or die($query);
     
+    $new_id = mysql_insert_id();
+    
     if(_gomail($email, $eps_cod, $key_word)){
         
-                 header("location:index.php?act=reg&eps=$eps_cod&key=$key_word");
+                 header("location:index.php?act=reg&eps=$eps_cod&key=$key_word&id=$new_id");
         }
     }          
 }  else {

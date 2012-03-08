@@ -11,13 +11,17 @@ if(!isset($_SESSION)){
 
     session_start();  
 }
-if(isset($attributes[id]) && $_SESSION[auth] == 0){
+
+if($_SESSION[auth] != 1)$_SESSION[auth] = 0;
+
+if(isset($attributes[id])){
          
    $_SESSION[id] = $attributes[id];
    
    $_SESSION[auth] = 1;
          
 }
+
 if(isset($attributes[di]) && !isset ($_SESSION[auth])){
          
    $_SESSION[id] = $attributes[di];
@@ -25,9 +29,8 @@ if(isset($attributes[di]) && !isset ($_SESSION[auth])){
    $_SESSION[auth] = 1;
          
 }
-if($_SESSION[auth] != 1)$_SESSION[auth] = 0;
 
-//print_r($_SESSION);
+print_r($_SESSION);  
 //echo "<br/>";
 //print_r($attributes);  
 

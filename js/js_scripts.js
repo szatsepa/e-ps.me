@@ -52,8 +52,6 @@ function _addMail(ID){
         
         var email = obj.email.value;
         
-//        var key_word = key;
-        
         var yes = _emlWalidation(email);
         
         if(!yes){
