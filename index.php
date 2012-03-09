@@ -30,8 +30,8 @@ if(isset($attributes[di]) && !isset ($_SESSION[auth])){
          
 }
 
-print_r($_SESSION);  
-//echo "<br/>";
+//print_r($_SESSION);  
+//echo "<br/>"; 
 //print_r($attributes);  
 
 include 'classes/User.php';

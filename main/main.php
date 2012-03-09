@@ -28,11 +28,16 @@ $eps_array = str_split($eps);
     </form>
             <div class="reg_index" style="margin-top: 100px;">
             
-            <?php for($i=0;$i<8;$i++){
+            <?php 
+            if($eps){
+                     $eps = '"'.$eps.'"';
+            }
+            for($i=0;$i<8;$i++){
                 $ml = ($i*45)."px";
                  
                  if($eps){
-                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/".  strtolower($eps_array[$i]).".png'/>";
+//                     $eps = '"'.$eps.'"';
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><input type='image' src='http://".$host."/images/symbols/".  strtolower($eps_array[$i]).".png' title='Скопировать код в буфер обмена' onclick='javascript:_copyToclipboard($eps)'/>";//
                  }else{
                      echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/index_plase.jpg'/>";
                  }

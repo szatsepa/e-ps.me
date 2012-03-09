@@ -81,3 +81,10 @@ function _writeUser(ID){
     document.forms[0].submit();
    
 }
+function _copyToclipboard(text){
+if (window.clipboardData){
+    window.clipboardData.setData("Text", text);alert ("Нужная строка добавлена в буфер обмена.");
+}else {
+    var DummyVariable = prompt('Буфер обмена заблокирован браузером, нажмите Ctrl+C для копирования этой строки:',text);
+}
+}

@@ -62,7 +62,7 @@ div.regs_fields{
 }
 div.r_surname{
     position: relative;
-    width: 220px;
+    width: 420px;
     height: 28px;
     padding-top: 1px;
     padding-bottom: 0;
@@ -96,7 +96,7 @@ div.reg_submit{
     width: 70px;
     height: 35px;
     margin-top: 240px;
-    margin-left: 478px;
+    margin-left: 608px;
     z-index: 3;
     padding-left: 6px;
     padding-top: 12px;
