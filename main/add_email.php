@@ -3,11 +3,13 @@
 /*
  * created by arcady.1254@gmail.com 5/3/2012
  */
-if($attributes[err] == 1 && $_SESSION[id] != 0){
-    
+
     $email = $attributes[email];
     
     $eps = $attributes[eps];
+    
+if($attributes[err] == 1 && $_SESSION[id] != 0){ 
+    
     ?>
 <script language="javascript">
     
@@ -15,9 +17,12 @@ if($attributes[err] == 1 && $_SESSION[id] != 0){
 </script>
     <?php
 }else{
-    $email = $user->data[email];
+   if($user->data){
+         $email = $user->data[email];
     
-    $key_word = $user->data[key_word]; 
+         $key_word = $user->data[key_word]; 
+    
+    }
 }
 ?>
 <div class="envelope_base">

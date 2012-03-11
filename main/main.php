@@ -31,7 +31,7 @@ $eps_array = str_split($eps);
             <?php if($eps){
                      $eps = '"'.$eps.'"';
             }?>
-            <div class="reg_index" style="margin-top: 100px;"  title='Скопировать код в буфер обмена' onmouseover="this.style='cursor:pointer'" onmouseout="this.style='cursor:default'">
+            <div class="reg_index" style="margin-top: 100px;"> 
             
             <?php 
             
@@ -39,7 +39,7 @@ $eps_array = str_split($eps);
                 $ml = ($i*45)."px";
                  
                  if($eps){
-                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><input type='image' src='http://".$host."/images/symbols/".  strtolower($eps_array[$i]).".png' onclick='javascript:_copyToclipboard($eps);' />";//
+                     echo "<div class='r_index_0' style='margin-left: ".$ml.";'><input type='image' src='http://".$host."/images/symbols/".  strtolower($eps_array[$i]).".png' onclick='javascript:_copyToclipboard($eps);'  title='Скопировать код в буфер обмена' />";//
                  }else{
                      echo "<div class='r_index_0' style='margin-left: ".$ml.";'><img src='http://".$host."/images/symbols/index_plase.jpg'/>";
                  }
