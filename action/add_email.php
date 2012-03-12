@@ -47,16 +47,15 @@ if($new_id){
     $row = mysql_fetch_assoc($result);
     
     $key = $row[key_word];
-    
-    
-    if(_gomail($email, $eps_cod, $key_word)){
-     header("location:index.php?act=auth&code=$key");
-}
-    
+        
+     header("location:index.php?act=auth&code=null&ismail=1");
+
 }
 function _gomail($email, $eps, $key){
     
-            $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\n Сикреднaйе слово для входа - $key.\n C уважением. Администрация. ";              
+//    Здравствуйте! Почтовый ящик (пишем ящик) (пишем код)
+    
+            $message ="Здравствуйте! Почтовый ящик  - $email имеет код $eps.\r\n Пароль для входа - $key.\r\n\r\n C уважением. Администрация. ";              
              
             $headers = 'From: administrator@'. $host. "\r\n";
             
@@ -64,7 +63,7 @@ function _gomail($email, $eps, $key){
             
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
                     
-            mail($email, 'Ваш валшебный ключ', $message, $headers);
+            mail($email, 'Регистрация адреса', $message, $headers);
             
             return 1;
     

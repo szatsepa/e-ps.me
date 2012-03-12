@@ -3,6 +3,18 @@
 /*
  * created by arcady.1254@gmail.com 2/2/2012
  */
+if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
+    ?>
+<script language="javascript">
+    
+    alert("Такой адрес уже зарегистрирован!");
+    
+        document.location.href = "http://e-ps.me/index.php?act=main";
+    
+</script>
+    <?php
+}else{
+    
 $code = quote_smart($attributes[code]);
 
         $query = "SELECT id FROM eps_users WHERE key_word = $code";
@@ -35,9 +47,7 @@ $code = quote_smart($attributes[code]);
     <?php 
     }else{
         
-        unset($_SESSION[id]);
-        unset ($_SESSION[auth]);
-        unset($_COOKIE[di]);
+     $lo = logout();   
     ?>
 <script language="javascript">   
 //        alert(<?php echo $query;?>); 
@@ -45,4 +55,16 @@ $code = quote_smart($attributes[code]);
          document.forms[0].submit();
     
 </script>    
-    <?php } ?>
+    <?php } 
+    
+} 
+    
+  function logout(){
+      
+        unset($_SESSION[id]);
+        unset ($_SESSION[auth]);
+        unset($_COOKIE[di]);
+        return NULL;   
+  }
+  
+  ?>

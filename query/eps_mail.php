@@ -23,7 +23,7 @@ $ismail = 1;
 
 if($eps){
 
-            $message ="Здравствуйте товарисчЪ! Валшебный ключ получателя - $eps.\r\n \r\nC уважением. Администрация. ";              
+            $message ="Здравствуйте!\r\nПочтовый ящик $recipe имеет код $eps\r\n \r\nC уважением. Администрация. ";              
              
             $headers = 'From: administrator@'. $host. "\r\n";
             
@@ -31,11 +31,11 @@ if($eps){
             
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
             
-            $sabject = 'Ваш валшебный ключ';
+            $sabject = 'Ключ';
              
 }else{
     
-    $message ="Здравствуйте товарисчЪ!К сожалению к адресу  $recipe не прикреплен валшебний код!\r\n И мы не знаем как бить с етим!\r\n\r\nC уважением. Администрация. ";              
+    $message ="Здравствуйте!К сожалению адрес  $recipe не имеет ключа!\r\n \r\n\r\nC уважением. Администрация. ";              
              
             $headers = 'From: administrator@'. $host. "\r\n";
             
@@ -43,7 +43,7 @@ if($eps){
             
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
             
-            $sabject = 'Валшебный ключ';
+            $sabject = 'Ключ';
             
      $ismail = NULL;
    
