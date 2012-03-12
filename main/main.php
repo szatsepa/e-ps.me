@@ -3,13 +3,31 @@
 /*
  * created by arcady.1254@gmail.com 3/3/2012
  */ 
+if($user->data){
 $eps = $user->data[eps];
 
 $email = $user->data[email];
 
-$eps_array = str_split($eps);
 
 
+}else if(isset ($attributes[ismail])){
+    
+    $email = $attributes[email];
+    
+    $recipe = $attributes[recipe];
+    
+    $eps = $attributes[eps];
+}
+if(isset ($attributes[ismail]))$ismail = intval($attributes[ismail]);
+
+if(!$ismail && isset ($attributes[ismail])){
+    ?>
+<script language="javascript">
+    alert("К сожалению к такому адресу не прикреплен вoлшебний код!!!");
+</script> 
+<?php
+}
+if($eps)$eps_array = str_split($eps);
 ?>
 <div class="envelope_base">
     <div class="envelope">
@@ -19,7 +37,7 @@ $eps_array = str_split($eps);
         </div>
       <form id="cover">
         <div class="recipe">
-            <input type="text" name="recipe" size="22"  required placeholder="Адрес получателя"/>
+            <input type="text" name="recipe" size="22" value="<?php echo $recipe;?>"   required placeholder="Адрес получателя"/>
         </div>
         <div class="send">
             <input type="text" name="send" size="22" value="<?php echo $email;?>"  required placeholder="Ваш адрес"/>

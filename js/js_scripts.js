@@ -17,7 +17,7 @@ function _emlWalidation(eml){
 }
 function _mySend(ID, auth){
     
-    var au = parseInt(auth);
+    var au = 1;
     
     var obj = document.getElementById(ID);
         

@@ -3,15 +3,13 @@
 /*
  * created by arcady.1254@gmail.com 5/3/2012
  */
-//print_r($attributes);
 
 $email = $attributes[send];
 
 $recipe = $attributes[recipe];
 
-//$recipe = quote_smart($recipe);
 
-$query = "SELECT eps_cod, id FROM eps_sender WHERE email = '$email'";
+$query = "SELECT eps_cod, id FROM eps_sender WHERE email = '$recipe'";
 
 $result = mysql_query($query) or die($query);
 
@@ -21,7 +19,11 @@ $eps = $row[eps_cod];
 
 $id = $row[id]; 
 
-            $message ="Здравствуйте товарисчЪ! Ваш валшебный ключ - $eps.\r\n Добавлен новый емейл - $recipe\r\nC уважением. Администрация. ";              
+$ismail = 1;
+
+if($eps){
+
+            $message ="Здравствуйте товарисчЪ! Валшебный ключ получателя - $eps.\r\n \r\nC уважением. Администрация. ";              
              
             $headers = 'From: administrator@'. $host. "\r\n";
             
@@ -29,23 +31,39 @@ $id = $row[id];
             
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
             
-             mail($email, 'Ваш валшебный ключ', $message, $headers);
+            $sabject = 'Ваш валшебный ключ';
+             
+}else{
+    
+    $message ="Здравствуйте товарисчЪ!К сожалению к адресу  $recipe не прикреплен валшебний код!\r\n И мы не знаем как бить с етим!\r\n\r\nC уважением. Администрация. ";              
+             
+            $headers = 'From: administrator@'. $host. "\r\n";
             
- $query = "INSERT INTO eps_recipient (sender_id, recipient) VALUES ($id, '$recipe')";
- 
- mysql_query($query) or die($query);
- 
-            $message ="Здравствуйте товарисчЪ! Некто, (емайл - $email) прислал Вам валшебный ключ - $eps.\r\nC уважением. Администрация. ";              
-             
-            $headers = 'From: '. $email. "\r\n";
-             
             $headers  .= 'MIME-Version: 1.0' . "\r\n";
             
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
             
-            mail($recipe, 'Ваш валшебный ключ', $message, $headers);
+            $sabject = 'Валшебный ключ';
+            
+     $ismail = NULL;
+   
+}
+
+mail($email, $sabject, $message, $headers);
            
- header("location:index.php?act=main");
+if($ismail == 0){                  ?>
+<script language="javascript">
+    document.write('<form action="index.php?act=main" method="post"><input type="hidden" name="email" value="<?php echo $email;?>"/><input type="hidden" name="recipe" value="<?php echo $recipe;?>"/><input type="hidden" name="ismail" value="<?php echo $ismail;?>"/></form>');
+    document.forms[0].submit();
+</script>
+    <?php  }else{
+?>  
+<script language="javascript">
+   document.write('<form action="index.php?act=main" method="post"><input type="hidden" name="eps" value="<?php echo $eps;?>"/><input type="hidden" name="email" value="<?php echo $email;?>"/><input type="hidden" name="recipe" value="<?php echo $recipe;?>"/><input type="hidden" name="ismail" value="<?php echo $ismail;?>"/></form>');
+    document.forms[0].submit();</script>
+  <?php      
+    } 
+
                 
                  ?>
 
