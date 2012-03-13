@@ -67,7 +67,7 @@ switch ($attributes[act]) {
        include 'query/eps_mail.php';
        break;
    
-   case 'info':
+   case 'rmail':
        $title = "Регистрация адреса.";
        include 'main/header.php';
        include 'main/selector.php';

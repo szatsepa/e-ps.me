@@ -33,9 +33,9 @@ if($new_id){
     
     $new_id = mysql_insert_id();
     
-    if(_gomail($email, $eps_cod, $key_word)){
+    if(_gomail($email, $eps_cod, $key_word)){ 
         
-                 header("location:index.php?act=reg&eps=$eps_cod&key=$key_word&id=$new_id");
+                 header("location:index.php?act=reg&eps=$eps_cod&key=$key_word&id=$new_id&email=$email");
         }
     }          
 }  else {

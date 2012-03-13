@@ -16,6 +16,14 @@ if(isset($user)){
     $eps_array = str_split($eps);
 
 }
+if(isset($attributes[eps]) && isset ($attributes[key])){
+    $email = $attributes[email];
+ ?>   
+<script language="javascript">
+        alert("Кодовое слово былоотправлено по адресу - <?php echo $email;?>");
+</script>
+   <?php 
+}
 ?>
 <br/>
 <div class="envelope_base">
@@ -55,7 +63,7 @@ if(isset($user)){
         </div>
 </form> 
         <div class="stamp">
-            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=main';"/>
+            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" title="Вернутся на главную" onclick="javascript:document.location.href='index.php?act=main';"/>
         </div>
             <div class="reg_index">
             

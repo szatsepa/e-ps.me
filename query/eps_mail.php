@@ -63,8 +63,5 @@ if($ismail == 0){                  ?>
     document.forms[0].submit();</script>
   <?php      
     } 
-
-                
-                 ?>
-
-
+?>
+ 

@@ -33,14 +33,14 @@ if($eps)$eps_array = str_split($eps);
     <div class="envelope">
             <input type="hidden" name="eps" value="<?php echo $eps;?>"/>
         <div class="stamp">
-            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=info';"/> 
+            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" title="Зарегистрировать адрес" onclick="javascript:document.location.href='index.php?act=rmail';"/> 
         </div>
       <form id="cover">
         <div class="recipe">
-            <input type="text" name="recipe" size="22" value="<?php echo $recipe;?>"   required placeholder="Адрес получателя"/>
+            <input type="text" name="recipe" size="22" value="<?php echo $recipe;?>" title="Введите адрес электронной почты, код которой вы желаете получить" required placeholder="Адрес получателя"/>
         </div>
         <div class="send">
-            <input type="text" name="send" size="22" value="<?php echo $email;?>"  required placeholder="Ваш адрес"/>
+            <input type="text" name="send" size="22" value="<?php echo $email;?>" title="Введите адрес электронной почты на который вы желаете получить код" required placeholder="Ваш адрес"/>
         </div>
             <div class="submit_cover">
                 <input type="image" src="http://e-ps.me/images/submit_cover.jpg"  alt="BUTTON" onclick="javascript:_mySend('cover',<?php echo $_SESSION[auth];?>);"/>

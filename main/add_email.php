@@ -39,7 +39,7 @@ if($attributes[err] == 1 && $_SESSION[id] != 0){
             </div>
             </form>
         <div class="stamp_add_mail">
-            <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=main';"/> 
+            <input type="image" src="http://e-ps.me/images/stamp.gif" title="Вернутся на главную" width="145" height="145" alt="BUTTON" onclick="javascript:document.location.href='index.php?act=main';"/> 
         </div>
    </div>
 </div>
