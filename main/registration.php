@@ -56,7 +56,13 @@ if(isset($attributes[eps]) && isset ($attributes[key])){
             <div class="r_surname">
                 <input size="42" type="text" required name="bank_card" value="<?php echo $user->data[bank_card];?>"/>
             </div>
-               
+             <div class="r_surname">
+                <input size="32" type="text"  maxlength="8" required name="code" value="<?php echo $user->data[eps];?>"/>
+                <input type="checkbox" name="upd"/>
+            </div> 
+            <div class="r_surname">
+                <p class="reg">Дабы заменить код, поставьте галочку в чекбоксе.</p>
+            </div> 
         </div>
         <div class="reg_submit">
             <input type="button" value="Сохранить" onclick="javascript:_writeUser('reg_form_<?php echo $us;?>');"/>

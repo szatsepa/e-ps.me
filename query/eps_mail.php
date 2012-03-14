@@ -8,7 +8,15 @@ $email = $attributes[send];
 
 $recipe = $attributes[recipe];
 
+$query = "SELECT Count(id) FROM eps_sender WHERE email = '$email'";
 
+$result = mysql_query($query) or die ($query);
+
+$row = mysql_fetch_row($result);
+
+$count = $row[0];
+
+if($count > 0){
 $query = "SELECT eps_cod, id FROM eps_sender WHERE email = '$recipe'";
 
 $result = mysql_query($query) or die($query);
@@ -49,7 +57,7 @@ if($eps){
    
 }
 
-mail($email, $sabject, $message, $headers);
+if(mail($email, $sabject, $message, $headers))$ismail=1;
            
 if($ismail == 0){                  ?>
 <script language="javascript">
@@ -60,8 +68,16 @@ if($ismail == 0){                  ?>
 ?>  
 <script language="javascript">
    document.write('<form action="index.php?act=main" method="post"><input type="hidden" name="eps" value="<?php echo $eps;?>"/><input type="hidden" name="email" value="<?php echo $email;?>"/><input type="hidden" name="recipe" value="<?php echo $recipe;?>"/><input type="hidden" name="ismail" value="<?php echo $ismail;?>"/></form>');
-    document.forms[0].submit();</script>
+    document.forms[0].submit();
+</script>
   <?php      
-    } 
+    }
+}else{
 ?>
- 
+<script language="javascript">
+   document.write('<form action="index.php?act=rmail" method="post"><input type="hidden" name="email" value="<?php echo $email;?>"/></form>');
+    document.forms[0].submit();
+</script>
+<?php
+}
+?>

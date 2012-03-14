@@ -27,8 +27,11 @@ if($attributes[err] == 1 && $_SESSION[id] != 0){
 ?>
 <div class="envelope_base">
     <div class="add_mail">
-            <div class="txt_add_mail">
-                <p>Для регистрации почтового ящика введите емейл.</p>
+            <div class="txt_add_mail">   
+                <p><strong>Для регистрации почтового ящика введите емейл.</strong><br/>
+                    <small> Если вы забыли ключ введите адрес электронной почты, которую уже регистрировали,<br/>
+                        на нее придет сообщение с ключем от личного кабинета.</small>
+                </p>
             </div>
         <form id="cnf">
             <div class="input_mail">

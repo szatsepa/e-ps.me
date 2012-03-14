@@ -20,6 +20,8 @@ $word = quote_smart($attributes[word]);
 
 $bank_card = quote_smart($attributes[bank_card]);
 
+$eps = quote_smart($attributes[code]);
+
 $query = "INSERT INTO eps_users (surname,
                                  name,
                                  patronymic,

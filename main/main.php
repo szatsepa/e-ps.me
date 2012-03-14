@@ -20,12 +20,20 @@ $email = $user->data[email];
 }
 if(isset ($attributes[ismail]))$ismail = intval($attributes[ismail]);
 
-if(!$ismail && isset ($attributes[ismail])){
+if(!$ismail && isset ($attributes[ismail]) && $attributes[ismail] != 1){
     ?>
 <script language="javascript">
     alert("К сожалению к такому адресу не прикреплен вoлшебний код!!!");
 </script> 
 <?php
+}
+if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
+    ?>
+<script language="javascript">
+    alert("Сообщение было отправлено!");
+</script> 
+<?php
+$recipe = NULL;
 }
 if($eps)$eps_array = str_split($eps);
 ?>

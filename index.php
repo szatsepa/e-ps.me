@@ -90,7 +90,7 @@ switch ($attributes[act]) {
        break;
    
    case 'chngus':
-//       include 'main/header.php';
+       include 'main/header.php';
        include 'action/change_user.php';
        break;
 

@@ -26,18 +26,15 @@ div.envelope_base{
     position: relative;
     width: 1024px;
     height: 800px;
-/*    outline: 1px solid aqua;*/
 }
 div.envelope{
     position: relative;
     float: left;
     width: 801px;
     height: 563px;
-/*    margin: 10px auto 0;*/
     margin-top: 20px;
     margin-left: 120px;
     background-image: url("../images/cover.png");
-/*    background-color: aquamarine;*/
     display: block;
 }
 div.registration{
@@ -45,7 +42,6 @@ div.registration{
     float: left;
     width: 801px;
     height: 563px;
-/*    margin: 10px auto 0;*/
     margin-top: 20px;
     margin-left: 120px;
     background-image: url(../images/registration_bg.png);
@@ -66,7 +62,6 @@ div.r_surname{
     height: 28px;
     padding-top: 1px;
     padding-bottom: 0;
-/*    outline: 1px solid goldenrod;    */
 }
 div.reg_index{
     position: absolute;
@@ -76,7 +71,6 @@ div.reg_index{
     margin-left: 18px;
     z-index: 2;
     background-color: #ffffff;
-/*    outline: 1px solid blueviolet;*/
 }
 div.r_index_0{
     position: absolute;
@@ -86,12 +80,10 @@ div.r_index_0{
     padding-left: 8px;
     padding-top: 7px;
     z-index: 0;
-/*    outline: 1px solid red;*/
 }
 
 div.reg_submit{
     position: absolute;
-/*    outline: 1px solid red;*/
     position: absolute;
     width: 70px;
     height: 35px;
@@ -139,25 +131,21 @@ div.add_mail{
     float: left;
     width: 801px;
     height: 563px;
-/*    margin: 10px auto 0;*/
     margin-top: 20px;
     margin-left: 120px;
-/*    background-image: url("../images/cover.png");*/
     background-color: #ffffff;
     display: block;
     z-index: 0;
-/*    outline: 1px solid brown;*/
 }
-div.txt_add_mail{
+div.txt_add_mail{ 
     position: absolute;
     width: 560px;
     height: 28px;
     margin-left: 5px;
-    margin-top: 22px;
-/*    outline: 1px solid red;*/
+    margin-top: 2px;
     z-index: 1;
     font: 14px Arial;
-    font-weight: bold;
+    font-weight: normal;
     color: #000000;
 }
 div.stamp_add_mail{
@@ -168,9 +156,7 @@ div.stamp_add_mail{
     height: 145px;
     margin-top: 35px;
     margin-left: 613px;
-/*    margin-right: 25px;*/
     z-index: 2;
-/*    outline: 1px solid gold;*/
 }
 div.input_mail{
     position: absolute;
@@ -178,7 +164,6 @@ div.input_mail{
     height: 28px;
     margin-left: 115px;
     margin-top: 62px;
-/*    outline: 1px solid red;*/
     z-index: 3;
     font: 14px Arial;
     font-weight: bold;
@@ -192,9 +177,7 @@ div.confirm{
     height: 28px;
     margin-left: 185px;
     margin-top: 102px;
-/*    outline: 1px solid red;*/
     z-index: 4;
-/*    background-color: #aaaaaa;*/
 }
 div.selector {
 	background-color:#cccccc;
@@ -204,10 +187,8 @@ div.selector {
 	padding: 0 0 0 0;
         padding-left: 22px;
 	margin-top:7px;
-/*        margin-left: 22px; */
 	width:98%;
         height: 28px;
-/*        outline: 1px solid red;*/
 } 
 span.selector2 {
 	display: inline;
@@ -216,8 +197,7 @@ span.selector2 {
 	right: 12px;
 	margin:0 0 0 0;
 	padding:0 0 0 2px;
-	font-size:8pt;
-	
+	font-size:8pt;	
 }
 
 span.selector3 {
@@ -231,10 +211,13 @@ span.selector3 {
 input.submit3 {
 	font-size: 8pt;
 	font-weight: bold;
-/*	width:2em;*/
 	margin-left: 3px;
 	margin-bottom: 0px;
 	margin-right: 0px;
 	margin-top:0px;	
 	position:relative;	
+}
+p.reg{
+    font-size: 10px;
+    color: #000000;
 }

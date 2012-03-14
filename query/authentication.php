@@ -4,10 +4,14 @@
  * created by arcady.1254@gmail.com 2/2/2012
  */
 if(isset ($attributes[ismail]) && $attributes[ismail] == 1){
-    ?>
-<script language="javascript">
     
-    alert("Такой адрес уже зарегистрирован!");
+    $email = $_SESSION[email];
+    
+    unset($_SESSION[email]);
+    ?>
+<script language="javascript">   
+    
+    alert("На адрес <?php echo $email;?>, был отправлен ключ.");
     
         document.location.href = "http://e-ps.me/index.php?act=main";
     

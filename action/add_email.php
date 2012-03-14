@@ -40,6 +40,8 @@ if($new_id){
     }          
 }  else {
     
+    $_SESSION[email] = $email;  
+    
     $query = "SELECT u.id, u.key_word FROM eps_sender AS s, eps_users AS u WHERE s.email = '$email' AND s.id = u.email_id";
     
     $result = mysql_query($query) or die ($query);
@@ -47,14 +49,21 @@ if($new_id){
     $row = mysql_fetch_assoc($result);
     
     $key = $row[key_word];
-        
-     header("location:index.php?act=auth&code=null&ismail=1");
-
+ 
+            $message ="Здравствуйте! Пароль для входа  - $key.\r\n\r\n C уважением. Администрация. ";              
+             
+            $headers = 'From: administrator@'. $host. "\r\n";
+            
+            $headers  .= 'MIME-Version: 1.0' . "\r\n";
+            
+            $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
+                    
+           if(mail($email, 'Пароль к личному кабинету', $message, $headers)){
+               header("location:index.php?act=auth&code=null&ismail=1");
+           }
 }
-function _gomail($email, $eps, $key){
-    
-//    Здравствуйте! Почтовый ящик (пишем ящик) (пишем код)
-    
+function _gomail($email, $eps, $key){ 
+
             $message ="Здравствуйте! Почтовый ящик  - $email имеет код $eps.\r\n Пароль для входа - $key.\r\n\r\n C уважением. Администрация. ";              
              
             $headers = 'From: administrator@'. $host. "\r\n";
