@@ -93,6 +93,17 @@ div.reg_submit{
     padding-left: 6px;
     padding-top: 12px;
 }
+div.change_code{
+    position: absolute;
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    margin-top: 290px;
+    margin-left: 428px;
+    z-index: 3;
+    padding-left: 6px;
+    padding-top: 12px;
+}
 div.stamp{
     position: relative;
     background-image: url(../images/stamp.gif);

@@ -32,6 +32,7 @@ if(isset($attributes[eps]) && isset ($attributes[key])){
         <div class="regs_fields">
             <input type="hidden" name="user_id" value="<?php echo $user->data[id];?>"/>
             <input type="hidden" name="email_id" value="<?php echo $user->data[email_id];?>"/> 
+            <input type="hidden" name="eps" value="<?php echo $eps;?>"/>
             <div class="r_surname">
                 <input size="42" type="text" required name="surname" value="<?php echo $user->data[surname];?>"/> 
             </div>
@@ -56,18 +57,18 @@ if(isset($attributes[eps]) && isset ($attributes[key])){
             <div class="r_surname">
                 <input size="42" type="text" required name="bank_card" value="<?php echo $user->data[bank_card];?>"/>
             </div>
-             <div class="r_surname">
-                <input size="32" type="text"  maxlength="8" required name="code" value="<?php echo $user->data[eps];?>"/>
-                <input type="checkbox" name="upd"/>
-            </div> 
             <div class="r_surname">
-                <p class="reg">Дабы заменить код, поставьте галочку в чекбоксе.</p>
-            </div> 
+               <input type="button" value="Изменить код" onclick="javascript:_changeCode('reg_form_<?php echo $us;?>');"/>  
+            </div>
         </div>
-        <div class="reg_submit">
+        <div class="reg_submit"> 
             <input type="button" value="Сохранить" onclick="javascript:_writeUser('reg_form_<?php echo $us;?>');"/>
         </div>
-</form> 
+<!--         <div class="change_code"> 
+          
+        </div>-->
+         </form> 
+
         <div class="stamp">
             <input type="image" src="http://e-ps.me/images/stamp.gif" width="145" height="145" alt="BUTTON" title="Вернутся на главную" onclick="javascript:document.location.href='index.php?act=main';"/>
         </div>
@@ -84,6 +85,7 @@ if(isset($attributes[eps]) && isset ($attributes[key])){
                 echo "</div>";
           }?>
         </div>
+        
     </div>
 </div>
 <script language="javascript">

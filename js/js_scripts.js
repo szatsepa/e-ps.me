@@ -94,3 +94,15 @@ if (window.clipboardData){
     var DummyVariable = prompt('Буфер обмена заблокирован браузером, нажмите Ctrl+C для копирования этой строки:',text);
 }
 }
+function _changeCode(ID){
+     
+    var obj = document.getElementById(ID);
+    
+    if(confirm("Вы действительно хотите заменить код?")){
+        document.write("<form action='index.php?act=chcode' method='post'><input type='hidden' name='email' value='"+obj.email.value+"'/></form>");
+        document.forms[0].submit();
+    }else{
+        return false;
+    }
+    
+}

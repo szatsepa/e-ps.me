@@ -93,6 +93,10 @@ switch ($attributes[act]) {
        include 'main/header.php';
        include 'action/change_user.php';
        break;
+   
+   case 'chcode':
+       include 'action/change_eps.php';
+       break;
 
     case "logout":
         include 'action/logout.php'; 
