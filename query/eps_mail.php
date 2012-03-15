@@ -53,11 +53,11 @@ if($eps){
             
             $sabject = 'Ключ';
             
-     $ismail = NULL;
+     $ismail = 0;
    
 }
 
-if(mail($email, $sabject, $message, $headers))$ismail=1;
+mail($email, $sabject, $message, $headers);
            
 if($ismail == 0){                  ?>
 <script language="javascript">
@@ -75,7 +75,7 @@ if($ismail == 0){                  ?>
 }else{
 ?>
 <script language="javascript">
-   document.write('<form action="index.php?act=rmail" method="post"><input type="hidden" name="email" value="<?php echo $email;?>"/></form>');
+   document.write('<form action="index.php?act=rmail" method="post"><input type="hidden" name="ismail" value="0"/><input type="hidden" name="email" value="<?php echo $email;?>"/></form>');
     document.forms[0].submit();
 </script>
 <?php
