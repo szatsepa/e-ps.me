@@ -17,6 +17,7 @@ $row = mysql_fetch_row($result);
 $count = $row[0];
 
 if($count > 0){
+    
 $query = "SELECT eps_cod, id FROM eps_sender WHERE email = '$recipe'";
 
 $result = mysql_query($query) or die($query);
@@ -40,24 +41,26 @@ if($eps){
             $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
             
             $sabject = 'Ключ';
+            
+            mail($email, $sabject, $message, $headers);
              
 }else{
-    
-    $message ="Здравствуйте!К сожалению адрес  $recipe не имеет ключа!\r\n \r\n\r\nC уважением. Администрация. ";              
-             
-            $headers = 'From: administrator@'. $host. "\r\n";
-            
-            $headers  .= 'MIME-Version: 1.0' . "\r\n";
-            
-            $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
-            
-            $sabject = 'Ключ';
-            
+//    
+//    $message ="Здравствуйте!К сожалению адрес  $recipe не имеет ключа!\r\n \r\n\r\nC уважением. Администрация. ";              
+//             
+//            $headers = 'From: administrator@'. $host. "\r\n";
+//            
+//            $headers  .= 'MIME-Version: 1.0' . "\r\n";
+//            
+//            $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
+//            
+//            $sabject = 'Ключ';
+//            
      $ismail = 0;
    
 }
 
-mail($email, $sabject, $message, $headers);
+
            
 if($ismail == 0){                  ?>
 <script language="javascript">
