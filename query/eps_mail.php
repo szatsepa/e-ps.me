@@ -45,19 +45,8 @@ if($eps){
             mail($email, $sabject, $message, $headers);
              
 }else{
-//    
-//    $message ="Здравствуйте!К сожалению адрес  $recipe не имеет ключа!\r\n \r\n\r\nC уважением. Администрация. ";              
-//             
-//            $headers = 'From: administrator@'. $host. "\r\n";
-//            
-//            $headers  .= 'MIME-Version: 1.0' . "\r\n";
-//            
-//            $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
-//            
-//            $sabject = 'Ключ';
-//            
+          
      $ismail = 0;
-   
 }
 
 
